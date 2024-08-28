@@ -11,7 +11,7 @@ from typing import Any
 import grpc
 from dotenv import load_dotenv
 
-from proto_files import pubsub_pb2, pubsub_pb2_grpc
+from protos import pubsub_pb2, pubsub_pb2_grpc
 
 load_dotenv()
 

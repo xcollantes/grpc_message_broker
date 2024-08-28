@@ -5,10 +5,11 @@ This would be in a service to send messages to broker service.
 
 import logging
 import os
-from dotenv import load_dotenv
-import grpc
 
-from proto_files import pubsub_pb2, pubsub_pb2_grpc
+import grpc
+from dotenv import load_dotenv
+
+from protos import pubsub_pb2, pubsub_pb2_grpc
 
 logging.basicConfig(level=logging.DEBUG)
 

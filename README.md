@@ -4,9 +4,17 @@ gRPC messaging system between microservices.
 
 ## Developer
 
-### RPC generate
+### Generate protobuf files
+
+Run this when editing the `.proto` files.
 
 ```bash
+# Delete __pycache__ directory if it exists.
 rm -r protos/__pycache__
-python3 -m grpc_tools.protoc -I. --python_out=generated/ --grpc_python_out=generated/ protos/*
+
+# Delete existing protobuf files if they exist.
+rm -r protos/*_pb2*
+
+# Generate new protobuf files.
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. protos/*
 ```

@@ -1,14 +1,14 @@
 """Broker service server."""
 
-from concurrent import futures
 import logging
 import os
+from concurrent import futures
 
-from dotenv import load_dotenv
 import grpc
+from dotenv import load_dotenv
 
 from broker_service.broker_service import BrokerService
-from proto_files import pubsub_pb2_grpc
+from protos import pubsub_pb2_grpc
 
 load_dotenv()
 
