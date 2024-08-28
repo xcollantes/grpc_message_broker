@@ -2,7 +2,22 @@
 
 gRPC messaging system between microservices.
 
-## Developer
+## Getting started
+
+### broker_service
+
+Service broker which receives messages from publishers and distributes messages
+to subscribers.
+
+### publisher_service
+
+Example for placing code in a service pushing messages to subscribers.
+
+### subscribe_service
+
+Example for listening for messages.
+
+## Contributing to this repo
 
 ### Generate protobuf files
 
