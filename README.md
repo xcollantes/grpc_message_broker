@@ -1,6 +1,9 @@
 # gRPC Messenger
 
-gRPC messaging system between microservices.
+A super lightweight gRPC messaging system between microservices.
+
+![Python badge](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue
+)
 
 _Why gRPC?_
 
