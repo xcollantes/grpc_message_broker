@@ -1,0 +1,49 @@
+// Pubsub service.
+
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package evergreen.pubsub;
+
+
+// Data to send to subscribers.
+message PublishRequest {
+    // Subscription topic.
+    string topic = 1;
+    // Text message.
+    string message = 2;
+}
+
+// Publish response.
+message PublishResponse {
+    // Unique message ID.
+    string message_id = 1;
+    // Explains status.
+    string status_message = 2;
+}
+
+// Request object for a client to subscribe to a topic.
+message SubscribeRequest {
+    // Subscription topic.
+    string topic = 1;
+}
+
+// Message sent from Pubsub server to subscribers.
+message Message {
+    // Unique message ID.
+    string message_id = 1;
+    // Text message.
+    string message = 2;
+    // Timestamp of the message.
+    google.protobuf.Timestamp timestamp = 3;
+    // Topic name.
+    string topic = 4;
+}
+
+service PubsubService {
+    rpc Publish(PublishRequest) returns (PublishResponse) {}
+    // Subscribe to a stream of messages.
+    // Order is guaranteed and delivered at least once.
+    rpc Subscribe(SubscribeRequest) returns (stream Message) {}
+}
