@@ -9,7 +9,7 @@ from uuid import uuid4
 import grpc
 from google.protobuf.timestamp_pb2 import Timestamp
 
-from proto_files import pubsub_pb2, pubsub_pb2_grpc
+from protos import pubsub_pb2, pubsub_pb2_grpc
 
 logging.basicConfig(level=logging.DEBUG)
 
